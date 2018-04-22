@@ -1,0 +1,196 @@
+[
+  {
+    "title": "用户注册",
+    "name": "user_register",
+    "description": "听过一个说法：中国人自己都不知道的一个民族特征，却让他们屹立至今。 “在西方的神话里，火是上帝赐予的；希腊神话里，火是普罗米修斯偷来的；而在中国的神话里，火是钻木取火坚韧不拔摩擦出来的！这就是区别，他们用这样的故事告诫后代，与自然作斗争！”（钻木取火），面对末日洪水，西方神话是在诺亚方舟里躲避，但中国人的神话里，他们的祖先战胜了洪水，看吧，仍然是斗争，与灾难作斗争！”（大禹治水）“如果去读一下中国神话，你会觉得中国人的故事很不可思议，抛开故事情节，找到神话里表现的文化核心，你就会发现，只有两个字：抗争！假如有一座山挡在你的门前，你是选择搬家还是挖隧道？显而易见，搬家是最好的选择。然而在中国的故事里，他们却把山搬开了（愚公移山）“每个国家都有太阳神的传说，在部落时代，太阳神有着绝对的权威，纵览所有太阳神的神话你会发现，只有中国人的神话里有敢于挑战太阳神的故事：有一个人因为太阳太热，就去追太阳，想要把太阳摘下来（夸父追日）。当然，最后他累死了——很多人可能会笑，这太遗憾了，在中国的神话里，人们把他当做英雄来传颂，因为他敢于和看起来难以战胜的力量作斗争。 在另一个故事里，他们终于把太阳射下来了（后羿射日），中国人的祖先用这样的故事告诉后代：可以输，但不能屈服。中国人听着这样的神话故事长大，勇于抗争的精神已经成为遗传基因，他们自己意识不到，但会像祖先一样坚强。因此你们现在再想到中国人倔强的不服输精神，就容易理解多了，这是他们屹立至今的原因。”  “一个女孩被大海淹死了，她化作一只鸟复活，想要把海填平——这就是抗争！”（精卫填海） “一个人因为挑战天帝的神威被砍下了头，可他没死，而是挥舞着斧子继续斗争！”（刑天） 。",
+    "params": [
+      {
+        "name": "type",
+        "description": "注册类型，邮箱、手机号",
+        "type": "string",
+        "optional": false
+      },
+      {
+        "name": "username",
+        "description": "用户名",
+        "type": "string",
+        "optional": false
+      },
+      {
+        "name": "password",
+        "description": "注册密码",
+        "type": "string",
+        "optional": false
+      }
+    ],
+    "returns": [
+      {
+        "name": "err",
+        "description": "错误信息",
+        "type": "object",
+        "optional": false,
+        "subParams": [
+          {
+            "name": "level",
+            "description": "错误信息级别，0 无错误，1 提示信息，2 警告信息，3 错误信息",
+            "type": "int",
+            "optional": false
+          },
+          {
+            "name": "msg",
+            "description": "错误信息",
+            "type": "string",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "name": "data",
+        "description": "返回的具体数据",
+        "type": "object",
+        "optional": false
+      }
+    ]
+  },
+  {
+    "title": "用户登录",
+    "name": "user_login",
+    "description": "响应用户的登录请求，支持用户名、邮箱、手机登录",
+    "params": [
+      {
+        "name": "type",
+        "description": "登录类型，用户名、邮箱、手机号",
+        "type": "string",
+        "optional": false
+      },
+      {
+        "name": "password",
+        "description": "登录密码",
+        "type": "string",
+        "optional": false
+      }
+    ],
+    "returns": [
+      {
+        "name": "err",
+        "description": "错误信息",
+        "type": "object",
+        "optional": false,
+        "subParams": [
+          {
+            "name": "level",
+            "description": "错误信息级别，0 无错误，1 提示信息，2 警告信息，3 错误信息",
+            "type": "int",
+            "optional": false
+          },
+          {
+            "name": "msg",
+            "description": "错误信息",
+            "type": "string",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "name": "data",
+        "description": "返回的具体数据",
+        "type": "object",
+        "optional": false
+      }
+    ]
+  },
+  {
+    "title": "更新用户信息",
+    "name": "user_update",
+    "description": "更新用户信息",
+    "params": [
+      {
+        "name": "id",
+        "description": "用户 id",
+        "type": "int",
+        "optional": false
+      },
+      {
+        "name": "info",
+        "description": "用户信息",
+        "type": "object",
+        "optional": false,
+        "subParams": [
+          {
+            "name": "name",
+            "description": "用户名称",
+            "type": "string",
+            "optional": false
+          },
+          {
+            "name": "avatar",
+            "description": "用户头像地址",
+            "type": "string",
+            "optional": false
+          },
+          {
+            "name": "intro",
+            "description": "用户简介",
+            "type": "string",
+            "optional": false
+          },
+          {
+            "name": "city",
+            "description": "经常出没",
+            "type": "array",
+            "optional": false,
+            "subParams": "string"
+          },
+          {
+            "name": "setting",
+            "description": "用户设置",
+            "type": "object",
+            "optional": false,
+            "subParams": [
+              {
+                "name": "show_email",
+                "description": "是否对外显示邮箱，随便写点什么，一大堆废话。，随便写点什么，一大堆废话。，随便写点什么，一大堆废话。，随便写点什么，一大堆废话。，随便写点什么，一大堆废话。，随便写点什么，一大堆废话。",
+                "type": "boolean",
+                "optional": false
+              },
+              {
+                "name": "show_mobile",
+                "description": "是否对外显示手机号码",
+                "type": "boolean",
+                "optional": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "returns": [
+      {
+        "name": "err",
+        "description": "错误信息",
+        "type": "object",
+        "optional": false,
+        "subParams": [
+          {
+            "name": "level",
+            "description": "错误信息级别，0 无错误，1 提示信息，2 警告信息，3 错误信息",
+            "type": "int",
+            "optional": false
+          },
+          {
+            "name": "msg",
+            "description": "错误信息",
+            "type": "string",
+            "optional": false
+          }
+        ]
+      },
+      {
+        "name": "data",
+        "description": "返回的具体数据",
+        "type": "object",
+        "optional": false
+      }
+    ]
+  }
+]

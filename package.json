@@ -1,0 +1,16 @@
+{
+  "name": "apier",
+  "version": "0.0.1",
+  "description": "Save your time with Apier",
+  "main": "index.js",
+  "scripts": {
+    "start": "./run.bat"
+  },
+  "author": "Hisheng",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.8.4",
+    "heysoo": "^0.0.5",
+    "nunjucks": "^3.1.2"
+  }
+}
