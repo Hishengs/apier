@@ -150,6 +150,7 @@
       setTimeout(() => {
         this.showWelcome = false;
       }, 2000);
+      this.postman.url = `http://localhost:${this.config.env === 'development' ? this.config.devPort : this.config.serverPort}/api/test`;
     },
     methods: {
       // 生成请求的 mock 数据

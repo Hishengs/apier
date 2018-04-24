@@ -9,10 +9,11 @@ module.exports = app => {
 
     test (){
       try {
-        this.ctx.done(this.ctx.request.body);
+        // this.ctx.done(this.ctx.request.body);
+        this.ctx.doneWithError('这是测试地址，请将地址改为你的项目 Node 后端地址，一般是 http://localhost:888/api/dll/invoke');
       }catch (err){
         this.ctx.doneWithError(err.toString());
-      } 
+      }
     }
 
     // 加载接口文件

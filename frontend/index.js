@@ -5,6 +5,7 @@ import router from './router.js';
 import store from './store';
 import api from './api';
 import util from './util';
+import config from './config.js';
 import App from './page/app.vue';
 import './style/index.less';
 
@@ -24,6 +25,7 @@ function installPlugin(plugin, name){
 }
 installPlugin(api, 'api');
 installPlugin(util, 'util');
+installPlugin(config, 'config');
 installPlugin(new Vue(), 'eventHub');
 
 window.app = new Vue({
